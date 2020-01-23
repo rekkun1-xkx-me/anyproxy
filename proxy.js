@@ -52,7 +52,7 @@ class ProxyCore extends events.EventEmitter {
     this.status = PROXY_STATUS_INIT;
     this.proxyPort = config.port;
     this.proxyType = /https/i.test(config.type || DEFAULT_TYPE) ? T_TYPE_HTTPS : T_TYPE_HTTP;
-    this.proxyHostName = config.hostname || 'localhost';
+    this.proxyHostName = config.hostname || '0.0.0.0';
     this.recorder = config.recorder;
 
     if (parseInt(process.versions.node.split('.')[0], 10) < 4) {
